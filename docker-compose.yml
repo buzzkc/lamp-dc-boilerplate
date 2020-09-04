@@ -16,7 +16,7 @@ services:
     image: phpmyadmin/phpmyadmin
     restart: always
     ports:
-      - "8081:80"
+      - "8181:80"
     environment:
       PMA_HOST: mariadb
       MYSQL_ROOT_PASSWORD: *root_pass
@@ -35,6 +35,6 @@ services:
     depends_on:
       - mariadb
     ports:
-      - 3000:80
+      - 8182:80
     volumes:
-      - ./src:/var/www/html
+      - /mnt/d/dockerdata/web-hosting/public_html:/var/www/html
